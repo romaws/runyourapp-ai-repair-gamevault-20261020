@@ -70,7 +70,7 @@ html {
 /* Home Page Styles */
 .home-landing-image {
   @apply w-full h-[600px] bg-cover bg-center shadow-2xl relative;
-  background-image: url('../assets/landingBg.jpg');
+  background-image: url('./assets/landingBg.jpg');
   position: relative;
   overflow: hidden;
 }
@@ -270,4 +270,63 @@ html {
   @apply flex gap-2.5 rounded-lg px-7 py-2.5 bg-black border-1 border-white;
   @apply hover:bg-gray-900 transition-colors duration-200 cursor-pointer;
   @apply text-sm text-gray-300 active:opacity-30 font-semibold;
+}
+
+/* Keep the existing catalogue and controls reachable without page-wide scrolling. */
+.home-main { position: relative; }
+.home-landing-image img { object-fit: cover; }
+.navbar-space-con { width: auto; flex: 1; min-width: 0; }
+.navbar-brand-con { margin-left: 0; padding-right: 0; flex-shrink: 0; }
+.navbar-user-con { margin-right: 0; padding-right: 0; flex-shrink: 0; }
+.navbar-search-con, .navbar-search, .navbar-search-input { min-width: 0; }
+.navbar-search-con { flex: 0 1 18rem; }
+.navbar-search-input { width: 100%; }
+.navbar-links-con { flex-shrink: 0; }
+#home-main, #game-library-main, #featured-games-section { scroll-margin-top: 5rem; }
+.featured-games-con {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 12rem), 1fr));
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+.featured-games-list { width: 100%; min-width: 0; }
+.featured-game-image-file { width: 100%; object-fit: cover; }
+.featured-games-img { width: 100%; }
+.gamelibraryfilter-con { flex-wrap: wrap; gap: 1rem; padding-inline: 2rem; }
+.gamelibraryfilter-search-con { margin-inline: 0; flex: 1 1 25rem; min-width: 0; }
+.gamelibrary-input { width: 100%; min-width: 0; }
+.gamelibraryfilter-category-con { margin: 0; }
+.gamelibraryfilter-price { margin: 0; }
+
+@media (max-width: 900px) {
+  .navbar-main { height: auto; min-height: 4.75rem; flex-wrap: wrap; padding-block: .5rem; }
+  .navbar-space-con { display: none; }
+  .navbar-user-con { margin-left: auto; }
+  .navbar-links-con { order: 3; width: 100%; justify-content: space-between; gap: .5rem; }
+  .navbar-links-con > a, .navbar-links-con > div { display: flex; align-items: center; min-height: 2.75rem; }
+  .navbar-search-con { order: 4; flex-basis: 100%; }
+  .navbar-search { min-height: 2.75rem; }
+  .navbar-user { min-height: 2.75rem; }
+  #home-main, #game-library-main, #featured-games-section { scroll-margin-top: 11rem; }
+  .home-landing-con { margin-inline: 1.5rem; margin-top: 5rem; }
+  .landing-title { font-size: 2.25rem; line-height: 1.15; }
+  .landing-text { font-size: 1rem; }
+  .landing-buttons-con { flex-wrap: wrap; }
+  .featured-games-flex { margin-inline: 0; flex-wrap: wrap; }
+  .featured-title { margin-bottom: 0; }
+  .featured-games-con { padding-block: 2rem; }
+  .featured-games-list:hover, .gamelibrarygrid-item:hover { transform: none; }
+  .game-library-title { margin-inline: 1rem; }
+  .gamelibraryfilter-con { padding-inline: 1rem; }
+  .gamelibraryfilter-category-con, .gamelibraryfilter-price { flex: 1 1 auto; }
+  .gamelibrarygrid-con { margin-inline: 1rem; justify-content: center; }
+  .gamelibrarygrid-item { max-width: 100%; }
+  .gamelibrarygrid-image { max-width: 100%; }
+}
+
+
+/* Existing scaffold routes retain their text and clear the fixed navigation. */
+.scaffold-page { padding: 6rem 1rem 1rem; }
+@media (max-width: 900px) {
+  .scaffold-page { padding-top: 12rem; }
 }

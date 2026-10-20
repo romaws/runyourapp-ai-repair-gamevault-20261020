@@ -1,6 +1,6 @@
 import arrow from '../assets/arrow.svg';
 
-export function FeaturedGamesSection(sectionTitle) {
+export function FeaturedGamesSection() {
   return(
     <div className="featured-games-main" id='featured-games-section'>
         <div className="featured-games-flex">

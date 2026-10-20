@@ -1,32 +1,15 @@
 import search from "../assets/search.svg";
-import games from "../data/games";
 import { useState } from "react";
 
 export function GameLibraryFilter() {
 
   const [selectedCategory, setSelectedCategory] = useState("allCategories");
-  const [isLoading, setIsLoading] = useState(false);
 
   function handleCategoryChange(e) {
-    setIsLoading(true);
     setSelectedCategory(e.target.value);
-    setTimeout(() => setIsLoading(false), 500);
     // Here you can add logic to filter the game library based on the selected category
     console.log("Selected Category:", e.target.value);
   }
-
-  function filterCategory(games) {
-    if (selectedCategory === 'allCategories') {
-      console.log("All categories selected");
-      console.error(Error);
-      return games;
-      
-    }
-    console.log(`Filtered games by category: ${selectedCategory}`);
-    return games.filter(game => game.genre === selectedCategory);
-  }
-
-  const filteredCategory = filterCategory(games)
 
   // This component provides a filter for the game library, allowing users to search and filter games by category and price.
   return(

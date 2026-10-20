@@ -5,16 +5,16 @@ import person from '../assets/person.svg';
 
 export function Navbar() {
   return (
-    <main className="navbar-main">
-      <a href="#home-main"><div className="navbar-brand-con">
+    <nav className="navbar-main" aria-label="Main navigation">
+      <a href="/#home-main"><div className="navbar-brand-con">
         <img src={icon} alt="GameVault Logo" className='navbar-brand-icon' />
         <div className="navbar-brand-title">GameVault</div>
       </div></a>
 
       <div className="navbar-links-con">
-        <a href="#home-main"><div className="navbar-links">Home</div></a>
-        <a href="#game-library-main"><div className="navbar-links">Library</div></a>
-        <a href="#featured-games-section"><div className="navbar-links">Featured</div></a>
+        <a href="/#home-main"><div className="navbar-links">Home</div></a>
+        <a href="/#game-library-main"><div className="navbar-links">Library</div></a>
+        <a href="/#featured-games-section"><div className="navbar-links">Featured</div></a>
         <div className="navbar-links">Categories</div>
       </div>
 
@@ -34,6 +34,6 @@ export function Navbar() {
         </div>
       </div>
 
-    </main>
+    </nav>
   );
 }
