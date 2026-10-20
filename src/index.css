@@ -323,3 +323,10 @@ html {
   .gamelibrarygrid-item { max-width: 100%; }
   .gamelibrarygrid-image { max-width: 100%; }
 }
+
+
+/* Existing scaffold routes retain their text and clear the fixed navigation. */
+.scaffold-page { padding: 6rem 1rem 1rem; }
+@media (max-width: 900px) {
+  .scaffold-page { padding-top: 12rem; }
+}
