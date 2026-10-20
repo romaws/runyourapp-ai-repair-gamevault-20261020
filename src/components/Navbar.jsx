@@ -5,7 +5,7 @@ import person from '../assets/person.svg';
 
 export function Navbar() {
   return (
-    <main className="navbar-main">
+    <nav className="navbar-main" aria-label="Main navigation">
       <a href="#home-main"><div className="navbar-brand-con">
         <img src={icon} alt="GameVault Logo" className='navbar-brand-icon' />
         <div className="navbar-brand-title">GameVault</div>
@@ -34,6 +34,6 @@ export function Navbar() {
         </div>
       </div>
 
-    </main>
+    </nav>
   );
 }
